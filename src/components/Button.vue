@@ -1,5 +1,5 @@
 <template>
-  <button class="g-button" :class="dynamicClass" @click="$emit('click')">
+  <button class="Button" :class="dynamicClass" @click="$emit('click')">
     <g-icon
       class="loading icon"
       :class="iconDynamicClass"
@@ -14,7 +14,7 @@
       :name="icon"
       :icon-position="iconPosition"
     ></g-icon>
-    <div class="g-button-content">
+    <div class="Button-content">
       <slot></slot>
     </div>
   </button>
@@ -85,7 +85,7 @@
     computed: {
       dynamicClass() {
         return {
-          [`g-button-${this.type}`]: this.type,
+          [`Button-${this.type}`]: this.type,
           [`is-round`]: this.round,
           [`is-plain`]: this.plain,
           [`is-disabled`]: this.disabled,
@@ -101,7 +101,7 @@
 
 <style lang="scss" scoped>
   @import '../assist/style/_var.scss';
-  .g-button {
+  .Button {
     @include inline-flex(center, center);
     @include fontLineColor();
     padding: 0 1.4em;
