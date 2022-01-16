@@ -56,9 +56,9 @@
         return this.textVisible ? { active: true } : '';
       },
       iconName() {
-        let name = 'down-solid';
+        let name = 'down';
         if (this.codeVisible) {
-          name = 'up-solid';
+          name = 'up';
         }
         return name;
       },
@@ -83,7 +83,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../../src/assist/style/_var.scss';
+  @import '../assist/style/_var.scss';
   .demo-block {
     border: 1px solid #ebebeb;
     border-radius: 4px;

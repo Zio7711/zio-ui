@@ -1,36 +1,31 @@
 <template>
   <div id="app">
-    <Button class="button">默认按钮</Button>
-    <Button type="primary" class="button">主要按钮</Button>
-    <Button type="success" class="button">成功按钮</Button>
-    <Button type="warning" class="button">警告按钮</Button>
-    <Button type="danger" class="button">危险按钮</Button>
-    <Button type="info" class="button">信息按钮</Button>
-    <Button plain class="button">默认按钮</Button>
-    <Button plain type="primary" class="button">主要按钮</Button>
-    <Button plain type="success" class="button">成功按钮</Button>
-    <Button plain type="warning" class="button">警告按钮</Button>
-    <Button plain type="danger" class="button">危险按钮</Button>
-    <Button plain type="info" class="button">信息按钮</Button>
-    <Button round class="button">默认按钮</Button>
-    <Button round type="primary" class="button">主要按钮</Button>
-    <Button round type="success" class="button">成功按钮</Button>
-    <Button round type="warning" class="button">警告按钮</Button>
-    <Button round type="danger" class="button">危险按钮</Button>
-    <Button round type="info" class="button">信息按钮</Button>
+    <demo-content-block>
+      <g-row class="row">
+        <Button icon="add"></Button>
+        <Button icon="up"></Button>
+        <Button icon="browse"></Button>
+        <Button icon="down">向下</Button>
+        <Button icon="bottom" iconPosition="right">下载</Button>
+      </g-row>
 
-    <Button icon="add"></Button>
-    <Button icon="up"></Button>
-    <Button icon="browse"></Button>
-    <Button icon="down">向下</Button>
-    <Button icon="bottom" iconPosition="right">下载</Button>
+      <template slot="code">
+        使用type、plain 和 round 属性来定义 Button 的样式。
+        <pre><code>{{basicCode}}</code></pre>
+      </template>
+    </demo-content-block>
   </div>
 </template>
 
 <script>
+  import Block from '@/components/Block';
+  import Row from '@/components/Row';
   export default {
     name: 'App',
-    components: {},
+    components: {
+      'g-row': Row,
+      'demo-content-block': Block,
+    },
     data() {
       return {
         basicCode: `
