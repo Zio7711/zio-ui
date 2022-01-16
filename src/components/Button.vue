@@ -1,11 +1,4 @@
-Skip to content Search or jump to… Pull requests Issues Marketplace Explore
-@Zio7711 sunnywanggit / gulu Public Code Issues Pull requests 12 Actions
-Projects Wiki Security Insights gulu/src/button.vue @sunnywanggit sunnywanggit
-优化Button组件，新增"按钮尺寸"及"不可用状态" Latest commit 0b4ba59 on Jul 5,
-2020 History 1 contributor 110 lines (85 sloc) 3.32 KB
-
 <template>
-  <!--    把 iconPosition 当做 key 来求它的 value-->
   <button
     class="g-button"
     :class="{
@@ -16,11 +9,11 @@ Projects Wiki Security Insights gulu/src/button.vue @sunnywanggit sunnywanggit
     }"
     @click="$emit('click')"
   >
-    <g-icon
+    <Icon
       v-if="icon || loading"
       :name="loading ? 'loading' : icon"
       :class="loading ? 'loading' : ''"
-    ></g-icon>
+    ></Icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -28,10 +21,10 @@ Projects Wiki Security Insights gulu/src/button.vue @sunnywanggit sunnywanggit
 </template>
 
 <script>
-  import Icon from './components/icon';
+  import Icon from './Icon.vue';
   export default {
-    name: 's-button',
-    components: { 'g-icon': Icon },
+    name: 'Button',
+    components: { Icon: Icon },
     props: {
       icon: String,
       loading: { type: Boolean, default: false },
